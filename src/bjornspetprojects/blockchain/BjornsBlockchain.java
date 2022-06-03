@@ -40,5 +40,19 @@ public class BjornsBlockchain {
         System.out.println("BlockChain");
         System.out.println(Arrays.toString(blockChain.toArray()));
 
+        Block block2 =  new Block(new String[]{"Bjorn gives 100 to Yannick","Bjorn receives 30 from Maarten"},block1.getCurrentHash());
+        blockChain.add(block2);
+        System.out.println("Block 2");
+        System.out.println(block2.toString());
+        System.out.println("BlockChain");
+        System.out.println(Arrays.toString(blockChain.toArray()));
+
+        Block block3 =  new Block(new String[]{"Yannick gives 50 to Bjorn"},block2.getCurrentHash());
+        blockChain.add(block3);
+        System.out.println("Block 3");
+        System.out.println(block3.toString());
+        System.out.println("BlockChain");
+        System.out.println(Arrays.toString(blockChain.toArray()));
+
     }
 }
