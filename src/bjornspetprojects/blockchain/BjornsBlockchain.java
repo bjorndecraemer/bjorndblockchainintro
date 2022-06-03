@@ -22,9 +22,9 @@ public class BjornsBlockchain {
         String[] toHashArray3 = new String[]{toHashValue2,toHashValue1};
 
         System.out.println("Hashes of same value String Arrays also give the same hash");
-        System.out.println("Array 1"+toHashArray1.toString()+" with hash : "+ Arrays.hashCode(toHashArray1));
-        System.out.println("Array 2"+toHashArray2.toString()+" with hash : "+ Arrays.hashCode(toHashArray2));
-        System.out.println("Array 3"+toHashArray3.toString()+" with hash : "+ Arrays.hashCode(toHashArray3));
+        System.out.println("Array 1"+Arrays.toString(toHashArray1)+" with hash : "+ Arrays.hashCode(toHashArray1));
+        System.out.println("Array 2"+Arrays.toString(toHashArray2)+" with hash : "+ Arrays.hashCode(toHashArray2));
+        System.out.println("Array 3"+Arrays.toString(toHashArray3)+" with hash : "+ Arrays.hashCode(toHashArray3));
 
     }
 }
