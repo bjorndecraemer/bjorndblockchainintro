@@ -69,5 +69,20 @@ public class BjornsBlockchain {
         System.out.println("BlockChain 2");
         System.out.println(Arrays.toString(blockChain2.toArray()));
 
+        System.out.println("--------------------------------------");
+        System.out.println("Manipulation of values in transactions results in different hashes down the line");
+        ArrayList<Block> blockChain3 =  new ArrayList<>();
+        Block block7 =  new Block(new String[]{"Bjorn has 300"},0);
+        blockChain3.add(block7);
+        Block block8 =  new Block(new String[]{"Bjorn gives 500 to Yannick","Bjorn receives 30 from Maarten"},block7.getCurrentHash());
+        blockChain3.add(block8);
+
+        Block block9 =  new Block(new String[]{"Yannick gives 50 to Bjorn"},block8.getCurrentHash());
+        blockChain3.add(block9);
+        System.out.println("BlockChain 2");
+        System.out.println(Arrays.toString(blockChain2.toArray()));
+        System.out.println("BlockChain 3 (with manipulated values)");
+        System.out.println(Arrays.toString(blockChain3.toArray()));
+
     }
 }
