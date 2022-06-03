@@ -32,27 +32,42 @@ public class BjornsBlockchain {
         System.out.println("--------------------------------------");
 
         // BlockChain tests
-        ArrayList<Block> blockChain =  new ArrayList<>();
+        ArrayList<Block> blockChain1 =  new ArrayList<>();
         Block block1 =  new Block(new String[]{"Bjorn has 300"},0);
-        blockChain.add(block1);
+        blockChain1.add(block1);
         System.out.println("Block 1");
         System.out.println(block1.toString());
         System.out.println("BlockChain");
-        System.out.println(Arrays.toString(blockChain.toArray()));
+        System.out.println(Arrays.toString(blockChain1.toArray()));
 
         Block block2 =  new Block(new String[]{"Bjorn gives 100 to Yannick","Bjorn receives 30 from Maarten"},block1.getCurrentHash());
-        blockChain.add(block2);
+        blockChain1.add(block2);
         System.out.println("Block 2");
         System.out.println(block2.toString());
         System.out.println("BlockChain");
-        System.out.println(Arrays.toString(blockChain.toArray()));
+        System.out.println(Arrays.toString(blockChain1.toArray()));
 
         Block block3 =  new Block(new String[]{"Yannick gives 50 to Bjorn"},block2.getCurrentHash());
-        blockChain.add(block3);
+        blockChain1.add(block3);
         System.out.println("Block 3");
         System.out.println(block3.toString());
         System.out.println("BlockChain");
-        System.out.println(Arrays.toString(blockChain.toArray()));
+        System.out.println(Arrays.toString(blockChain1.toArray()));
+
+        System.out.println("--------------------------------------");
+        System.out.println("Same values and transactions give the same hashes");
+        ArrayList<Block> blockChain2 =  new ArrayList<>();
+        Block block4 =  new Block(new String[]{"Bjorn has 300"},0);
+        blockChain2.add(block4);
+        Block block5 =  new Block(new String[]{"Bjorn gives 100 to Yannick","Bjorn receives 30 from Maarten"},block4.getCurrentHash());
+        blockChain2.add(block2);
+
+        Block block6 =  new Block(new String[]{"Yannick gives 50 to Bjorn"},block5.getCurrentHash());
+        blockChain2.add(block6);
+        System.out.println("BlockChain 1");
+        System.out.println(Arrays.toString(blockChain1.toArray()));
+        System.out.println("BlockChain 2");
+        System.out.println(Arrays.toString(blockChain2.toArray()));
 
     }
 }
