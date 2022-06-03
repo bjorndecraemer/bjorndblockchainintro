@@ -1,5 +1,8 @@
 package bjornspetprojects.blockchain;
 
+import bjornspetprojects.blockchain.model.Block;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BjornsBlockchain {
@@ -25,6 +28,17 @@ public class BjornsBlockchain {
         System.out.println("Array 1"+Arrays.toString(toHashArray1)+" with hash : "+ Arrays.hashCode(toHashArray1));
         System.out.println("Array 2"+Arrays.toString(toHashArray2)+" with hash : "+ Arrays.hashCode(toHashArray2));
         System.out.println("Array 3"+Arrays.toString(toHashArray3)+" with hash : "+ Arrays.hashCode(toHashArray3));
+
+        System.out.println("--------------------------------------");
+
+        // BlockChain tests
+        ArrayList<Block> blockChain =  new ArrayList<>();
+        Block block1 =  new Block(new String[]{"Bjorn has 300"},0);
+        blockChain.add(block1);
+        System.out.println("Block 1");
+        System.out.println(block1.toString());
+        System.out.println("BlockChain");
+        System.out.println(Arrays.toString(blockChain.toArray()));
 
     }
 }
